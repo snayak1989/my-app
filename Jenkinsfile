@@ -3,17 +3,36 @@ pipeline {
     stages {
         stage('----clean----') { 
             steps {
-                sh "mvn clean" 
+                //bat "mvn clean" 
+                if (isUnix()) {
+                    sh "mvn clean"
+                }
+                else {
+                    bat "mvn clean"
+                }
+
             }
         }
         stage('----Test----') { 
             steps {
-                sh "mvn test" 
+                //bat "mvn test" 
+                if (isUnix()) {
+                    sh "mvn clean"
+                }
+                else {
+                    bat "mvn clean"
+                }
             }
         }
         stage('----Package----') { 
             steps {
-                sh "mvn package" 
+                //bat "mvn package" 
+                if (isUnix()) {
+                    sh "mvn clean"
+                }
+                else {
+                    bat "mvn clean"
+                }
             }
         }
        
